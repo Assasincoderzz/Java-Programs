@@ -1,35 +1,19 @@
-import java.util.Scanner;
-import java.io.BufferedReader;  
-import java.io.*;
-public class p3
-{  
-    public static void main(String[] args) throws Exception 
-    {  
-        String n =new String();  
-        Scanner sc=new Scanner(System.in);  
-        n=sc.nextLine();  
-        FileWriter writer = new FileWriter("input.txt");
-        writer.write(n);
-        writer.close();
-        String line;  
-        int count = 0,count1 = 0;  
-        FileReader file = new FileReader("input.txt");  
-        BufferedReader br = new BufferedReader(file); 
-        while((line = br.readLine()) != null) 
-        {  
-            String words[] = line.split(" ");
-            count = count + words.length;
+public class StringComparison {  
+ public static void main(String a[]){  
+            String str = "JavaTpoint is a great website to acquire knowledge";  
+                StringBuffer obj =  
+            new StringBuffer("JavaTpoint is a great website to acquire knowledge");  
+        if(str.contentEquals(obj)){  
+            System.out.println("The content of the string is equal");  
+        } else {  
+            System.out.println("The content of the string is not equal");  
         }  
-        br.close(); 
-        FileReader file1 = new FileReader("input.txt");  
-        BufferedReader br1 = new BufferedReader(file1); 
-        while((line = br1.readLine()) != null) 
-        {  
-            String words1[] = line.split("\\.");
-            count1 = count1 + words1.length;
+        StringBuffer obj1 =  
+            new StringBuffer("It is another string");  
+        if(str.contentEquals(obj1)){  
+            System.out.println("The content of the string is equal");  
+        } else {  
+            System.out.println("The content of the string is not equal");  
         }  
-        br.close(); 
-        System.out.println(count+" "+count1);  
-         
     }  
-}
+}  
